@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Multi-Floating Bar Chart</title>
+		<script src="http://www.chartjs.org/assets/Chart.min.js"></script>
+		<script src="../src/Chart.MultiFloatingBar.js"></script>
+	</head>
+	<body>
+		<div style="width: 75%">
+			<canvas id="canvas" height="450" width="600"></canvas>
+		</div>
+
+
+	<script>
+	var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+
+	var barChartData = {
+		labels : [ 'Remove duplicate search results in the backend',
+  'Allow search to use multiple search terms',
+  'Don\'t show private boards in search',
+  'Search endpoint',
+  'Text body',
+  'typo in submenu',
+  'User id gets lost on reloads',
+  'Backend: support removing users from the board',
+  'Board admin should be able to remove user from the board users list',
+  'Allow user to subscribe to notifications from Board page.',
+  'Limit board settings to admins only',
+  'Send notifications on new posts',
+  'Update backend to allow the posts to be flagged as inappropriate',
+  'Allow posts to be flagged as inappropriate',
+  'Add board creator to board users upon creation of the board' ],
+		datasets : [
+			{
+				fillColor : "rgba(220,220,220,0.5)",
+				strokeColor : "rgba(220,220,220,0.8)",
+				highlightFill: "rgba(220,220,220,0.75)",
+				highlightStroke: "rgba(220,220,220,1)",
+				data : [ { start: 1415913113000, end: 1415913113000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415993072000, end: 1415993143000 },
+     { start: 1415991669000, end: 1415991680000 },
+     { start: 1415990098000, end: 1415990106000 },
+     { start: 1415980140000, end: 1416001051000 },
+     { start: 1415940050000, end: 1415940265000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415939655000, end: 1415940792000 },
+     { start: 1415931810000, end: 1415932061000 },
+     { start: 1415932083000, end: 1415932671000 },
+     { start: 1415935826000, end: 1415936115000 },
+     { start: 1415929856000, end: 1415953243000 },
+     { start: 1415920776000, end: 1415920895000 } ]
+			},
+			{
+				fillColor : "rgba(151,187,205,0.5)",
+				strokeColor : "rgba(151,187,205,0.8)",
+				highlightFill : "rgba(151,187,205,0.75)",
+				highlightStroke : "rgba(151,187,205,1)",
+				data : [ { start: 1415913113000, end: 1415913113000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415993143000, end: 1415993175000 },
+     { start: 1415991684000, end: 1415991686000 },
+     { start: 1415990107000, end: 1415990111000 },
+     { start: 1416001052000, end: 1416003768000 },
+     { start: 1415940265000, end: 1415940384000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415940242000, end: 1415940789000 },
+     { start: 1415932063000, end: 1415932083000 },
+     { start: 1415932672000, end: 1415933417000 },
+     { start: 1415936115000, end: 1415936668000 },
+     { start: 1415953242000, end: 1416016687000 },
+     { start: 1415920896000, end: 1415921111000 } ]
+			},
+			{
+				fillColor : "rgba(240,73,73,0.5)",
+				strokeColor : "rgba(240,73,73,0.8)",
+				highlightFill : "rgba(240,73,73,0.75)",
+				highlightStroke : "rgba(240,73,73,1)",
+				data : [ { start: 1415913113000, end: 1415913113000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415993176000, end: 1415995769000 },
+     { start: 1415991685000, end: 1416003842000 },
+     { start: 1415990120000, end: 1415990124000 },
+     { start: 1416003767000, end: 1416003857000 },
+     { start: 1415940384000, end: 1415995755000 },
+     { start: 1415913113000, end: 1415913113000 },
+     { start: 1415940790000, end: 1415947875000 },
+     { start: 1415932085000, end: 1415932093000 },
+     { start: 1415933418000, end: 1415995747000 },
+     { start: 1415936669000, end: 1415995734000 },
+     { start: 1415990368000, end: 1416016697000 },
+     { start: 1415921112000, end: 1415995717000 } ]
+			}
+		]
+	};
+	window.onload = function(){
+		var ctx = document.getElementById("canvas").getContext("2d");
+		window.myBar = new Chart(ctx).MultiFloatingBar(barChartData, {
+			responsive : true,
+			scaleLabel: "<%=(new Date(parseInt(value))).toLocaleString()%>",
+			scaleBeginAtZero: false
+		});
+	};
+	</script>
+	</body>
+</html>
