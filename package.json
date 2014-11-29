@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/cprimera/Chart.MultiFloatingBar.js",
   "dependencies": {
-    "Chart.js": ">= 1.0.0-beta"
+    "chart.js": ">= 1.0.1-beta.2"
   },
   "devDependencies": {
     "gulp": "3.5.x",

@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-  	"Chart.js": "1.0.0-beta"
+  	"chartjs": "1.0.1-beta.4"
   }
 }
