@@ -9,6 +9,8 @@
 		<div style="width: 75%">
 			<canvas id="canvas" height="450" width="600"></canvas>
 		</div>
+		<div id="legend">
+		</div>
 
 
 	<script>
@@ -32,6 +34,7 @@
   'Add board creator to board users upon creation of the board' ],
 		datasets : [
 			{
+				label: "Development",
 				fillColor : "rgba(220,220,220,0.5)",
 				strokeColor : "rgba(220,220,220,0.8)",
 				highlightFill: "rgba(220,220,220,0.75)",
@@ -53,6 +56,7 @@
      { start: 1415920776000, end: 1415920895000 } ]
 			},
 			{
+				label: "Testing",
 				fillColor : "rgba(151,187,205,0.5)",
 				strokeColor : "rgba(151,187,205,0.8)",
 				highlightFill : "rgba(151,187,205,0.75)",
@@ -74,6 +78,7 @@
      { start: 1415920896000, end: 1415921111000 } ]
 			},
 			{
+				label: "Merging",
 				fillColor : "rgba(240,73,73,0.5)",
 				strokeColor : "rgba(240,73,73,0.8)",
 				highlightFill : "rgba(240,73,73,0.75)",
@@ -103,6 +108,8 @@
 			scaleLabel: "<%=(new Date(parseInt(value))).toLocaleString()%>",
 			scaleBeginAtZero: false
 		});
+		var legend = document.getElementById('legend');
+		legend.innerHTML = window.myBar.generateLegend();
 	};
 	</script>
 	</body>
