@@ -1,7 +1,7 @@
 Chart.MultiFloatingBar.js
 =========================
 
-* Multiple Floating Bar plugin for Chart.js* [chartjs.org](http://www.chartjs.org)
+*Multiple Floating Bar plugin for Chart.js* [chartjs.org](http://www.chartjs.org)
 
 ## Documentation
 
