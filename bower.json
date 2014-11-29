@@ -1,0 +1,22 @@
+{
+  "name": "Chart.MultiFloatingBar.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/cprimera/Chart.MultiFloatingBar.js",
+  "authors": [
+    "Christopher Primerano <cprimera@mac.com>"
+  ],
+  "description": "MultiFloatingBar implementation for Chart.js",
+  "main": "Chart.MultiFloatingBar.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  	"Chart.js": "1.0.0-beta"
+  }
+}
