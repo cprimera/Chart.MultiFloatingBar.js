@@ -194,6 +194,14 @@
 
 			for (var datasetIndex = 0; datasetIndex < this.datasets.length; datasetIndex++) {
 				for (barIndex = 0; barIndex < this.datasets[datasetIndex].bars.length; barIndex++) {
+					var x = this.datasets[datasetIndex].bars[barIndex].x;
+					var y = this.datasets[datasetIndex].bars[barIndex].y;
+					var width = this.datasets[datasetIndex].bars[barIndex].width;
+					var base = this.datasets[datasetIndex].bars[barIndex].base;
+					if (eventPosition.x >= x - (width / 2) && eventPosition.x <= x + (width /2) && eventPosition.y >= base && eventPosition.y <= y) {
+						helpers.each(this.datasets, datasetIterator);
+						return barsArray;
+					}
 					if (this.datasets[datasetIndex].bars[barIndex].inRange(eventPosition.x,eventPosition.y)){
 						helpers.each(this.datasets, datasetIterator);
 						return barsArray;
