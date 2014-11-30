@@ -222,7 +222,7 @@
 						if(self.options.relativeBars) {
 							values[barIndex] = 100;
 						} else {
-							values[barIndex] = (values[barIndex] < bar.endValue) ? bar.endValue : values[barIndex];
+							values[barIndex] = (values[barIndex] < bar.startValue) ? bar.startValue : values[barIndex];
 						}
 					});
 				});
