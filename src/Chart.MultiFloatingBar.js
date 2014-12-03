@@ -1,6 +1,5 @@
 /*
- * Chart.js
- * http://chartjs.org/
+ * Chart.MultiFloatingBar.js
  * Version: 0.1.0-beta.0
  *
  * Copyright 2014 Christopher Primerano
