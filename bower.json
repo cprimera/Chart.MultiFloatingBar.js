@@ -1,6 +1,6 @@
 {
   "name": "Chart.MultiFloatingBar.js",
-  "version": "0.1.0",
+  "version": "0.1.0-beta.0",
   "homepage": "https://github.com/cprimera/Chart.MultiFloatingBar.js",
   "authors": [
     "Christopher Primerano <cprimera@mac.com>"
@@ -17,6 +17,6 @@
     "tests"
   ],
   "dependencies": {
-  	"chartjs": "1.0.1-beta.4"
+    "chartjs": "~1.0.1-beta.4"
   }
 }
