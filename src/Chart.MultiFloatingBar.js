@@ -67,6 +67,7 @@
 					label: dataset.label || null,
 					fillColor: dataset.fillColor,
 					strokeColor: dataset.strokeColor,
+					hide: dataset.hide || false,
 					bars: []
 				};
 
@@ -203,8 +204,8 @@
 
 			this.scale.draw(ease);
 
-			this.eachBars(function (bar, barIndex) {
-				if (bar.startValue !== bar.endValue) {
+			this.eachBars(function (bar, barIndex, datasetIndex) {
+				if (bar.startValue !== bar.endValue && !this.datasets[datasetIndex].hide) {
 					bar.transition({
 						base: this.scale.calculateY(bar.startValue),
 						x: this.scale.calculateX(barIndex),
