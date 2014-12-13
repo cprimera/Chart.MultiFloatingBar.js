@@ -14,7 +14,9 @@
 
 	var defaultConfig = {
 		//String - A legend template
-		legendTemplate : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"><%if(datasets[i].label){%><%=datasets[i].label%><%}%></span></li><%}%></ul>'
+		legendTemplate : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"><%if(datasets[i].label){%><%=datasets[i].label%><%}%></span></li><%}%></ul>',
+
+		xLabelSizeLimit: 0
 	};
 
 	Chart.types.Bar.extend({
@@ -167,7 +169,13 @@
 					);
 					helpers.extend(this, updatedRanges);
 				},
-				xLabels : this.options.xLabels || labels,
+				xLabels : (function (labels) {
+					var results = [];
+					labels.forEach(function (label) {
+						results.push((self.options.xLabelSizeLimit === 0) ? label : label.substr(0, self.options.xLabelSizeLimit).concat('...'));
+					});
+					return results;
+				})(this.options.xLabels || labels),
 				font : helpers.fontString(this.options.scaleFontSize, this.options.scaleFontStyle, this.options.scaleFontFamily),
 				lineWidth : this.options.scaleLineWidth,
 				lineColor : this.options.scaleLineColor,
