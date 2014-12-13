@@ -6,7 +6,6 @@
   "description": "MultiFloatingBar implementation for Chart.js",
   "main": "Chart.MultiFloatingBar.js",
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "bower_components",
