@@ -113,14 +113,33 @@
 			var self = this;
 
 			var dataTotal = function () {
-				var values = [];
+				var maxs = [],
+					mins = [];
 
 				self.eachBars(function (bar, barIndex) {
-					if (!values[barIndex]) {
-						values[barIndex] = 0;
+					if (!maxs[barIndex]) {
+						maxs[barIndex] = 0;
+					}
+					if (!mins[barIndex]) {
+						mins[barIndex] = Number.MAX_VALUE;
 					}
 
-					values[barIndex] = (values[barIndex] < bar.startValue) ? bar.startValue : values[barIndex];
+					maxs[barIndex] = (maxs[barIndex] < bar.endValue) ? bar.endValue : maxs[barIndex];
+					mins[barIndex] = (mins[barIndex] > bar.startValue) ? bar.startValue : mins[barIndex];
+				});
+
+				var values = [];
+
+				maxs.forEach(function (value) {
+					if (values.indexOf(value) === -1) {
+						values.push(value);
+					}
+				});
+
+				mins.forEach(function (value) {
+					if (values.indexOf(value) === -1) {
+						values.push(value);
+					}
 				});
 
 				return values;
